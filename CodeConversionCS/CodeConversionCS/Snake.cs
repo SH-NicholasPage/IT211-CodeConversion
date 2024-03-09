@@ -1,6 +1,6 @@
 ﻿public class Snake : Animal
 {
-    public bool Poisonous;
+    public bool Poisonous { get; set;}
 
     public Snake(String name, bool hasFur, int numberOfLegs, double sizeInFeet, bool poisonous) 
         : base(name, hasFur, numberOfLegs, sizeInFeet)

@@ -15,6 +15,6 @@
 
     public virtual String GetDescription()
     {
-        return $"{Name} has " + (HasFur ? "" : "no") + $" fur and has {NumberOfLegs} legs. It is {SizeInFeet} ft tall.";
+        return $"{Name} has" + (HasFur ? "" : " no") + $" fur and has {NumberOfLegs} legs. It is {SizeInFeet} ft tall.";
     }
 }

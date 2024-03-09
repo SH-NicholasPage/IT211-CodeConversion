@@ -1,10 +1,10 @@
-﻿const int numberOfAnimals = 4;
-
-Animal[] animals = new Animal[numberOfAnimals];
-animals[0] = new Dog("Piper", true, 4, 3.1, "German Shepard");
-animals[1] = new Snake("Scalez", false, 0, 5, true);
-animals[2] = new Snake("Viper", false, 0, 4.2, false);
-animals[3] = new Dog("Fido", false, 4, 1.9, "Xoloitzcuintli");
+﻿Animal[] animals =
+{
+    new Dog("Piper", true, 4, 3.1, "German Shepard"),
+    new Snake("Scalez", false, 0, 5, true),
+    new Snake("Viper", false, 0, 4.2, false),
+    new Dog("Fido", false, 4, 1.9, "Xoloitzcuintli"),
+};
 
 Console.WriteLine("Printing snakes...");
 
@@ -16,13 +16,28 @@ foreach(Animal a in animals)
     }
 }
 
-Animal favoriteAnimal = animals[Random.Shared.Next(animals.Length)];
-Console.WriteLine("My favorite animal is " + favoriteAnimal.Name);
+const int FAVORITE_ANIMALS = 2;
 
-Animal secondFavoriteAnimal = animals[Random.Shared.Next(animals.Length)];
+// You will not be able to achieve this syntax in JS.
+// Get as close as possible.
+Animal[] favoriteAnimals = new Animal[FAVORITE_ANIMALS];
+favoriteAnimals[0] = animals[Random.Shared.Next(animals.Length)];
+int i = 1;
 
-while (secondFavoriteAnimal.Name.Equals(favoriteAnimal.Name))
+for(; i < FAVORITE_ANIMALS; i++)
 {
-    secondFavoriteAnimal = animals[Random.Shared.Next(animals.Length)];
+    favoriteAnimals[i] = animals[Random.Shared.Next(animals.Length)];
+
+    if (favoriteAnimals[i].Name.Equals(favoriteAnimals[i - 1].Name))
+    {
+        i--;
+    }
 }
-Console.WriteLine("My second favorite animal is " + secondFavoriteAnimal.Name);
+
+Console.WriteLine("\nPrinting favorite animals...");
+
+while(i > 0)
+{
+    i--;
+    Console.WriteLine(favoriteAnimals[i].GetDescription());
+}
