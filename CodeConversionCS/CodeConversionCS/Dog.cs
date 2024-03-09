@@ -2,7 +2,8 @@
 {
     public String breed;
 
-    public Dog(String name, bool hasFur, int numberOfLegs, double sizeInFeet, String breed) : base(name, hasFur, numberOfLegs, sizeInFeet)
+    public Dog(String name, bool hasFur, int numberOfLegs, double sizeInFeet, String breed) 
+        : base(name, hasFur, numberOfLegs, sizeInFeet)
     {
         this.breed = breed;
     }

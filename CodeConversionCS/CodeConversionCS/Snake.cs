@@ -2,7 +2,8 @@
 {
     public bool Poisonous;
 
-    public Snake(string name, bool hasFur, int numberOfLegs, double sizeInFeet, bool poisonous) : base(name, hasFur, numberOfLegs, sizeInFeet)
+    public Snake(String name, bool hasFur, int numberOfLegs, double sizeInFeet, bool poisonous) 
+        : base(name, hasFur, numberOfLegs, sizeInFeet)
     {
         this.Poisonous = poisonous;
     }

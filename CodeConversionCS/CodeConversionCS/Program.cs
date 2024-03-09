@@ -19,5 +19,10 @@ foreach(Animal a in animals)
 Animal favoriteAnimal = animals[Random.Shared.Next(animals.Length)];
 Console.WriteLine("My favorite animal is " + favoriteAnimal.Name);
 
-favoriteAnimal = animals[Random.Shared.Next(animals.Length)];
-Console.WriteLine("My second favorite animal is " + favoriteAnimal.Name);
+Animal secondFavoriteAnimal = animals[Random.Shared.Next(animals.Length)];
+
+while (secondFavoriteAnimal.Name.Equals(favoriteAnimal.Name))
+{
+    secondFavoriteAnimal = animals[Random.Shared.Next(animals.Length)];
+}
+Console.WriteLine("My second favorite animal is " + secondFavoriteAnimal.Name);
