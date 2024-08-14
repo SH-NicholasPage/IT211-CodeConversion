@@ -1,10 +1,10 @@
 ﻿Animal[] animals =
-{
+[
     new Dog("Piper", true, 4, 3.1, "German Shepard"),
     new Snake("Scalez", false, 0, 5, true),
     new Snake("Viper", false, 0, 4.2, false),
     new Dog("Fido", false, 4, 1.9, "Xoloitzcuintli"),
-};
+];
 
 Console.WriteLine("Printing snakes...");
 
@@ -18,7 +18,7 @@ foreach(Animal a in animals)
 
 const int FAVORITE_ANIMALS = 2;
 
-// You will not be able to achieve this syntax in JS.
+// You will not be able to achieve the syntax for the next two lines in JS.
 // Get as close as possible.
 Animal[] favoriteAnimals = new Animal[FAVORITE_ANIMALS];
 favoriteAnimals[0] = animals[Random.Shared.Next(animals.Length)];
@@ -28,7 +28,7 @@ for(; i < FAVORITE_ANIMALS; i++)
 {
     favoriteAnimals[i] = animals[Random.Shared.Next(animals.Length)];
 
-    if (favoriteAnimals[i].Name.Equals(favoriteAnimals[i - 1].Name))
+    if (favoriteAnimals[i].Name == favoriteAnimals[i - 1].Name)
     {
         i--;
     }
