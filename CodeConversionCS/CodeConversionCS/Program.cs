@@ -18,7 +18,7 @@ foreach(Animal a in animals)
 
 const int FAVORITE_ANIMALS = 2;
 
-// You will not be able to achieve the syntax for the next two lines in JS.
+// You will not be able to match the syntax for the next two lines in JS.
 // Get as close as possible.
 Animal[] favoriteAnimals = new Animal[FAVORITE_ANIMALS];
 favoriteAnimals[0] = animals[Random.Shared.Next(animals.Length)];
